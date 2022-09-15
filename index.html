@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+    integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>Gifted</title>
+</head>
+
+<body>
+  <header>
+    <i class="mdi mdi-star-face fs-3 selectable" onclick="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark"
+      aria-controls="offcanvasDark"></i>
+  </header>
+  <main>
+    <div class="container-fluid">
+      <!-- SECTION Gifts go here -->
+      <div class="row" id="gifts">
+        <!-- <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="//thiscatdoesnotexist.com" class="img-fluid" alt="random cat">
+            </div>
+            <div class="card-footer text-center">
+              <p><b>message go here</b></p>
+            </div>
+          </div>
+        </div> -->
+        <!-- NOTE secocond template -->
+        <!-- <div class="col-md-4">
+          <div class="card open-gift-img">
+            <div class="card-body open-card selectable">
+              <p>test here</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </main>
+
+  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDark"
+    aria-labelledby="offcanvasDarkLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasDarkLabel">Gifted</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body text-dark">
+      <form onsubmit="app.giftsController.addGift()">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="tag-input" name="tag" placeholder="Enter Tag">
+          <label for="floatingInput">Enter Tag</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="url" class="form-control" id="url-input" name="url" placeholder="Enter GIF URL">
+          <label for="floatingPassword">Enter GIF URL</label>
+        </div>
+        <div class="text-end">
+          <button class="btn btn-outline-light">Submit</button>
+        </div>
+      </form>
+      <div class="horizontal-bar"></div>
+      <form onsubmit="app.giphyController.getGifs()">
+        <div class="form-floating mb-3 d-flex">
+          <input type="text" class="form-control" id="search-giphy-input" name="search" placeholder="Search Giphy">
+          <label for="floatingInput">Search Giphy</label>
+          <button class="btn btn-outline-light">🔍</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="app/App.js" type="module"></script>
+</body>
+
+</html>
