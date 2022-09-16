@@ -8,7 +8,13 @@ class AppState extends EventEmitter {
   values = loadState('values', Value)
   /** @type {import('./Models/Gift').Gift[]} */
   gifts = []
+  /** @type {import('./Models/Gif').Gif[]} */
+  gifs = []
 
+  offset = 0
+  perPage = 10
+  currentPage = 1
+  totalPages = 1
 }
 
 export const appState = new Proxy(new AppState(), {

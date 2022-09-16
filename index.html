@@ -17,7 +17,7 @@
 
 <body>
   <header>
-    <i class="mdi mdi-star-face fs-3 selectable" onclick="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark"
+    <i class="mdi mdi-plus fs-3 selectable text-visible ms-3 mt-3" onclick="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark"
       aria-controls="offcanvasDark"></i>
   </header>
   <main>
@@ -52,28 +52,39 @@
       <h5 class="offcanvas-title" id="offcanvasDarkLabel">Gifted</h5>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body text-dark">
+    <div class="offcanvas-body text-dark d-flex flex-column">
       <form onsubmit="app.giftsController.addGift()">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="tag-input" name="tag" placeholder="Enter Tag">
+          <input type="text" class="form-control" id="tag-input" name="tag" placeholder="Enter Tag" required>
           <label for="floatingInput">Enter Tag</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="url" class="form-control" id="url-input" name="url" placeholder="Enter GIF URL">
+          <input type="url" class="form-control" id="url-input" name="url" placeholder="Enter GIF URL" required>
           <label for="floatingPassword">Enter GIF URL</label>
         </div>
         <div class="text-end">
           <button class="btn btn-outline-light">Submit</button>
         </div>
       </form>
-      <div class="horizontal-bar"></div>
-      <form onsubmit="app.giphyController.getGifs()">
+      <div class="horizontal-bar my-5 align-self-center"></div>
+      <form onsubmit="app.gifsController.getGifs()">
         <div class="form-floating mb-3 d-flex">
           <input type="text" class="form-control" id="search-giphy-input" name="search" placeholder="Search Giphy">
           <label for="floatingInput">Search Giphy</label>
           <button class="btn btn-outline-light">🔍</button>
         </div>
       </form>
+      <div class="d-flex justify-content-between align-items-center">
+        <button class="btn" onclick="app.gifsController.previous()" title="Previous Page"><i class="mdi mdi-arrow-left-thick fs-3 text-light"></i></button>
+        <h4 class="text-light"><span id="current-page">1</span> / <span id="total-pages">100</span></h4>
+        <button class="btn" onclick="app.gifsController.next()" title="Next Page"><i class="mdi mdi-arrow-right-thick fs-3 text-light"></i></button>
+      </div>
+      <div class="container-fluid">
+        <!-- SECTION gifs go here -->
+        <div class="row" id="gifs">
+          
+        </div>
+      </div>
     </div>
   </div>
 
